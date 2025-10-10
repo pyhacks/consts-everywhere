@@ -15,3 +15,10 @@ def patch_and_reload_module(module = None, trans = assign_overload.transformer.A
     return orig_patch_and_reload_module(module, trans)
 
 assign_overload.patch_and_reload_module = patch_and_reload_module
+del patch_and_reload_module
+
+def __getattr__(name):
+    if name == "patch_and_reload_module":
+        return assign_overload.patch_and_reload_module
+    else:
+        raise AttributeError(f"module {__name__} has no attribute {name}")
