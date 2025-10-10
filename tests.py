@@ -3,6 +3,9 @@ from consts_everywhere import Const
 import consts_everywhere
 
 
+x = Const(45)
+
+
 class A:
     a = Const(10)
 
@@ -35,6 +38,7 @@ def test4(a: Const[list[int]]):
     pass
     
 def main():
+    print(x)
     test1()
     print()
     test2()
