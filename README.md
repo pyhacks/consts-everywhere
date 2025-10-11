@@ -14,7 +14,8 @@ This class inherits a variant of [ObjectProxy](https://wrapt.readthedocs.io/en/m
 Along with all augmented assignment operators, this class also overloads the normal assignment operator (=) thanks to [assign-overload](https://github.com/pyhacks/assign-overload).
 _wrapped_ can be any object and the resulting instance of this class will act like _wrapped_ in every way.
 If you use this class, you need to call consts_everywhere.**patch_and_reload_module**(). 
-This function only exposed in this package as a convenience, actually it is the exact copy of assign_overload.patch_and_reload_module() and you can find documentation about it in [assign-overload](https://github.com/pyhacks/assign-overload).
+consts_everywhere monkeypatches assign_overload.patch_and_reload_module() to make it possible to define global _Const_ objects. Since it is monkeypatched you can also access this function from assign_overload module.
+You can find documentation about this function in [assign-overload](https://github.com/pyhacks/assign-overload).
 Usage example:
 ```python
 import consts_everywhere
