@@ -59,7 +59,7 @@ def __wrapper_get__(self, instance, owner):
     if value is self.__wrapped__:
         return self
     else:
-        return self.__wrapped__.__get__(instance, owner)
+        return value
 
 
 def __wrapper_set__(self, instance, value):
